@@ -1,0 +1,31 @@
+set $left h
+set $down j
+set $up k
+set $right l
+
+mode "resize" {
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+mode "exit: lo[c]k, [e]xit, [r]eboot, [s]hutdown" {
+    bindsym r exec 'systemctl reboot'
+    bindsym s exec 'shutdown -h now' 
+    bindsym l exec $HOME/.scripts/lockscreen, mode "default";
+    bindsym c exec $HOME/.scripts/lockscreen, mode "default";
+    bindsym e exec 'swaymsg exit'
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+    bindsym x mode "default"
+}
+

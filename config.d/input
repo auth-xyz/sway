@@ -1,0 +1,9 @@
+input * {
+    xkb_layout "us" 
+    xkb_numlock enable
+    xkb_options "caps:escape"
+}
+
+input "1386:890:Wacom_One_by_Wacom_S_Pen" {
+  map_to_output HDMI-A-1
+}

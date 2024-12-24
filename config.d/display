@@ -1,0 +1,35 @@
+output HDMI-A-1 {
+  mode 1920x1080
+}
+
+# scale 1.5 
+
+output eDP-1 {
+  scale 1.2
+  mode 1920x1080
+}
+
+workspace 1 output HDMI-A-1
+workspace 2 output HDMI-A-1
+workspace 3 output HDMI-A-1
+workspace 4 output HDMI-A-1
+workspace 5 output eDP-1
+
+output * bg ~/.wallpapers/gruvbox-linux.png fill
+
+bar {
+    font "FiraCode Nerd Font Propo"
+    position top 
+    output * 
+    status_command i3status-rs 
+    colors {
+        separator #928374
+        background #282828
+        statusline #ebdbb2
+        focused_workspace #d79921 #d79921 #282828
+        active_workspace #3c3836 #3c3836 #ebdbb2
+        inactive_workspace #3c3836 #3c3836 #928374
+        urgent_workspace #282828 #cc241d #ebdbb2
+    }
+}
+

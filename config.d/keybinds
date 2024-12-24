@@ -1,0 +1,52 @@
+# Importing other parts of the config
+include ~/.config/sway/config.d/modes
+
+# Variables
+set $mod Mod4
+set $terminal kitty
+set $menu fuzzel 
+
+# Menu:
+bindsym $mod+d exec $menu 
+
+bindsym $mod+Tab exec ~/.cargo/bin/swayr switch-window
+bindsym Alt+Tab exec ~/.cargo/bin/swayr switch-window
+
+# Terminal + Scripts:
+bindsym $mod+t exec $terminal
+bindsym $mod+Shift+P exec /usr/bin/audio -c wp
+bindsym $mod+Shift+S exec kitty ~/.cargo/bin/ncspot
+
+# Applications:
+bindsym Print exec grim -g "$(slurp)" -t png - | wl-copy -t image/png
+bindsym Shift+Print exec grim -g "$(slurp)" - | swappy -f -
+bindsym Control+Shift+g exec /home/auth/.scripts/gif.sh
+
+
+# System: 
+bindsym $mod+Shift+r exec swaymsg reload
+bindsym $mod+q kill
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+bindsym Control+Shift+l exec ~/.scripts/lockscreen
+
+
+# Modes:
+bindsym $mod+r mode "resize"
+bindsym $mod+x mode "exit: lo[c]k, [e]xit, [r]eboot, [s]hutdown"
+
+
+# Media Control:
+bindsym $mod+XF86AudioPlay exec mpc toggle
+bindsym XF86AudioPlay exec playerctl --player playerctld play-pause
+bindsym XF86AudioPause exec playerctl --player playerctld play-pause
+bindsym XF86AudioNext exec playerctl --player playerctld next
+bindsym XF86AudioPrev exec playerctl --player playerctld previous
+bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ .05- 
+bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ .05+ -l 1
+bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym Shift+XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+
+# Brightness Control:
+bindsym F2 exec light -U 20
+bindsym F3 exec light -A 20
+bindsym F4 exec light -S 50

@@ -1,0 +1,26 @@
+# client.<class> <border> <background> <text> [<indicator> [<child_border>]]
+#    Configures the color of window borders and title bars.
+#    The first three colors are required.
+#    When omitted indicator will use a sane default and child_border
+#    will use the color set for background.
+# took from "man 5 sway"
+
+# Colors:
+
+client.urgent            #cc241d #282828 #ebdbb2 #282828
+client.focused           #458588 #282828 #ebdbb2 #282828
+client.unfocused         #3c3836 #282828 #ebdbb2 #282828
+client.focused_inactive  #3c3836 #282828 #ebdbb2 #282828
+client.focused_tab_title #504945 #282828 #ebdbb2 #282828
+
+# Gaps:
+
+gaps outer 5
+gaps inner 10
+
+smart_gaps off
+default_border pixel 
+default_floating_border pixel
+
+
+titlebar_padding 1
