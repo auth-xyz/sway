@@ -1,14 +1,15 @@
 include ~/.config/sway/variables.d/workspaces
 
-# Navigation
+# Resize/Move windows with $mod + mouse
 floating_modifier $mod normal
 
-# Move your focus around
+# Vim Keybinds
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
 bindsym $mod+$up focus up
 bindsym $mod+$right focus right
-# Or use $mod+[up|down|left|right]
+
+# Arrows: $mod+[up|down|left|right]
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
