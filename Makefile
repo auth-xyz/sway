@@ -1,5 +1,7 @@
 PACKAGE_MANAGER := $(shell command -v apt-get || command -v dnf || command -v pacman || command -v yay)
 CONFIG_DIR := $(HOME)/.config
+HOME_DIR := $(HOME)
+PACKAGES := fuzzel sway fish kitty tmux fzf fd eza zoxide
 
 .PHONY: all install links check clean
 
@@ -11,13 +13,13 @@ install:
 		exit 1; \
 	fi
 	@if command -v apt-get > /dev/null; then \
-		sudo apt-get update && sudo apt-get install -y fuzzel sway fish kitty; \
+		sudo apt-get update && sudo apt-get install -y $(PACKAGES); \
 	elif command -v dnf > /dev/null; then \
-		sudo dnf install -y fuzzel sway fish kitty; \
+		sudo dnf install -y $(PACKAGES); \
 	elif command -v pacman > /dev/null; then \
-		sudo pacman -Syu --noconfirm fuzzel sway fish kitty; \
+		sudo pacman -Syu --noconfirm $(PACKAGES); \
 	elif command -v yay > /dev/null; then \
-		yay -Syu --noconfirm fuzzel sway fish kitty; \
+		yay -Syu --noconfirm $(PACKAGES); \
 	fi
 
 links:
@@ -28,12 +30,14 @@ links:
 
 	# Create symbolic links
 	ln -sf $(CURDIR)/etc.d/fishcfg.fish $(CONFIG_DIR)/fish/config.fish
+	ln -sf $(CURDIR)/etc.d/alias.fish $(CONFIG_DIR)/fish/alias.fish
 	ln -sf $(CURDIR)/etc.d/fuzzel.ini $(CONFIG_DIR)/fuzzel/fuzzel.ini
 	ln -sf $(CURDIR)/etc.d/waybar.toml $(CONFIG_DIR)/i3status-rust/config.toml
+	ln -sf $(CURDIR)/etc.d/tmux.conf $(HOME_DIR)/.tmux.conf
 
 check:
 	# Check if packages are installed
-	@for pkg in fuzzel sway fish kitty; do \
+	@for pkg in $(PACKAGES); do \
 		if ! command -v $$pkg > /dev/null; then \
 			echo "Error: $$pkg is not installed."; \
 			exit 1; \
