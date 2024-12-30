@@ -2,21 +2,12 @@ icons_format = "{icon}"
 
 [theme]
 theme = "gruvbox-dark"
-# [theme.overrides]
-# idle_bg = "#2e2e2e"
-# idle_fg = "#abcdef"
 
 [icons]
 icons = "awesome4"
 [icons.overrides]
 bat = ["|E|", "|_|", "|=|", "|F|"]
 bat_charging = "|^| "
-
-[[block]]
-block = "focused_window"
-[block.format]
-full = " $title.str(max_w:15) |"
-short = " $title.str(max_w:10) |"
 
 [[block]]
 block = "amd_gpu"
