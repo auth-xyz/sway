@@ -18,9 +18,11 @@ client.focused_tab_title #504945 #282828 #ebdbb2 #282828
 gaps outer 5
 gaps inner 10
 
+blur enable
+shadows enable
+corner_radius 5
+
 smart_gaps off
 default_border pixel 
 default_floating_border pixel
 
-
-titlebar_padding 1

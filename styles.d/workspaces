@@ -3,4 +3,4 @@ assign [class="vesktop"] workspace 5
 
 # for_window [app_id="kitty"] floating enable; resize set 850 850
 
-exec swaymsg "workspace 1; exec DRI_PRIME=1 MOZ_ENABLE_WAYLAND=1 firefox"
+exec swaymsg "workspace 1; exec MOZ_ENABLE_WAYLAND=1 firefox"

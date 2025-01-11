@@ -34,7 +34,7 @@ alias fontinstall="cp $SCRIPTS/fontin.py ./ && python3 ./fontin.py && rm fontin.
 alias port_foward="$SCRIPTS/portfowarding.sh"
 alias aliases="bat $HOME/.zshalias"
 alias audio="/usr/bin/audio -c wp"
-alias image="kitty +kitten icat"
+alias icat="kitty +kitten icat"
 alias fasty="fastfetch"
 
 # Git aliases
