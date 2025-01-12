@@ -1,0 +1,61 @@
+{
+  "layer": "bottom",
+  "position": "top",
+  "height": 30,
+  "spacing": 5,
+  "margin-top": 10,
+  "modules-left": ["sway/workspaces", "wlr/taskbar","sway/mode"],
+  "modules-center": ["sway/window"],
+  "modules-right": ["cpu", "memory", "clock"],
+  "sway/workspaces": {
+    "format": "{icon}",
+    "format_unfocused": "",
+    "format-icons": {
+      "focused": "●", 
+      "1": "○",
+      "2": "○",
+      "3": "○",
+      "4": "○",
+      "5": "○",
+      "6": "○",
+      "7": "○",
+      "8": "○",
+      "9": "○",
+      "10": "○",
+    }
+  },
+  "sway/window": {
+    "format": "{title}"
+  },
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-icons": ["", "", "", "", ""]
+  },
+  "clock": {
+    "format-alt": "{:%a, %d. %b  %H:%M}"
+  },
+  "cpu": {
+    "format": " {usage: >3}%",
+    "on-click": "alacritty -e htop"
+  },
+  "memory": {
+    "format": " {: >3}%",
+    "on-click": "alacritty -e htop"
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 16,
+    //"icon-theme": "Numix-Circle",
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close"
+  },
+}
+

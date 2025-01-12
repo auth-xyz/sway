@@ -19,18 +19,22 @@ output eDP-1 bg ../wallpapers/platform.jpg fill
 output HDMI-A-1 bg ../wallpapers/platform.jpg fill
 
 bar {
-    font "FiraCode Nerd Font Propo"
-    position top 
-    output * 
-    status_command i3status-rs 
-    colors {
-        separator #928374
-        background #282828
-        statusline #ebdbb2
-        focused_workspace #d79921 #d79921 #282828
-        active_workspace #3c3836 #3c3836 #ebdbb2
-        inactive_workspace #3c3836 #3c3836 #928374
-        urgent_workspace #282828 #cc241d #ebdbb2
-    }
+  swaybar_command waybar 
 }
 
+# bar {
+#     # font "FiraCode Nerd Font Propo"
+#     # position top 
+#     # output * 
+#     # status_command i3status-rs 
+#     # colors {
+#     #     separator #928374
+#     #     background #282828
+#     #     statusline #ebdbb2
+#     #     focused_workspace #d79921 #d79921 #282828
+#     #     active_workspace #3c3836 #3c3836 #ebdbb2
+#     #     inactive_workspace #3c3836 #3c3836 #928374
+#     #     urgent_workspace #282828 #cc241d #ebdbb2
+#     # }
+# }
+#

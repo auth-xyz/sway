@@ -1,0 +1,170 @@
+/* Define Gruvbox Color Palette */
+@define-color bg0 #282828;
+@define-color bg1 #3c3836;
+@define-color bg2 #504945;
+@define-color fg1 #ebdbb2;
+@define-color fg2 #d5c4a1;
+@define-color fg4 #fbf1c7;
+@define-color red #cc241d;
+@define-color orange #d79921;
+@define-color yellow #fabd2f;
+@define-color green #98971a;
+@define-color aqua #83a598;
+@define-color blue #458588;
+
+/* General Settings */
+* {
+  font-family: "FiraCode Nerd Font", monospace;
+  font-size: 14px;
+  color: @fg1;
+}
+
+.module {
+  padding: 2px 4px; /* Smaller padding */
+  margin: 1px; /* Minimal spacing */
+  background: @bg1;
+  border-radius: 3px; /* Slight rounding */
+  font-size: 14px; /* Smaller font size for a compact design */
+}
+
+.module:hover {
+  background: @bg2;
+  color: @fg2;
+}
+
+#waybar {
+  background: @bg0;
+  border: 1px solid @bg1;
+  padding: 2px; /* Reduced padding for a thinner bar */
+  border-radius: 4px; /* Slight rounding */
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Focused/Active Modules */
+.module.active {
+  background: @blue;
+  color: @fg1;
+}
+
+/* Workspaces */
+#workspaces button {
+  background: transparent;
+  border: none;
+  color: @fg1;
+  padding: 2px 6px; /* Reduced padding */
+  margin: 1px; /* Minimal margin */
+  border-radius: 2px; /* Less rounded */
+  font-size: 12px; /* Smaller font */
+}
+
+#workspaces button:hover {
+  background: @bg2;
+  color: @fg2;
+}
+
+#workspaces button.active {
+  background: @green;
+  color: @bg0;
+  font-weight: bold;
+}
+
+/* Date and Time */
+#clock {
+  font-weight: bold;
+  color: @yellow;
+}
+
+/* System Tray */
+#tray {
+  background: @bg1;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+#tray > .item {
+  padding: 5px;
+  border-radius: 3px;
+  transition: background 0.3s, color 0.3s;
+}
+
+#tray > .item:hover {
+  background: @bg2;
+  color: @fg2;
+}
+
+/* Modes (e.g., Battery, Layouts) */
+.mode {
+  padding: 5px 10px;
+  margin: 0 5px;
+  background: @bg0;
+  color: @fg1;
+  border-radius: 5px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.mode.critical {
+  background: @red;
+  color: @fg4;
+}
+
+.mode.warning {
+  background: @orange;
+  color: @fg4;
+}
+
+.mode.good {
+  background: @green;
+  color: @fg1;
+}
+
+/* Progress Bars (e.g., Volume, Battery) */
+.progress {
+  background: @bg2;
+  border-radius: 5px;
+}
+
+.progress > div {
+  background: @aqua;
+  transition: width 0.3s;
+}
+
+.progress.critical > div {
+  background: @red;
+}
+
+.progress.warning > div {
+  background: @orange;
+}
+
+.progress.good > div {
+  background: @green;
+}
+
+/* Tooltip */
+#tooltip {
+  background: @bg1;
+  color: @fg1;
+  padding: 8px 12px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+  font-size: 12px;
+}
+
+/* Custom Animations */
+@keyframes pulse {
+  0% {
+    background: @blue;
+  }
+  50% {
+    background: @aqua;
+  }
+  100% {
+    background: @blue;
+  }
+}
+
+.module.pulsing {
+  animation: pulse 1.5s infinite;
+}
+
+
