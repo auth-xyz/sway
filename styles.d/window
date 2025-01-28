@@ -18,8 +18,8 @@ client.focused_tab_title #504945 #282828 #ebdbb2 #282828
 gaps outer 5
 gaps inner 10
 
-blur enable
-shadows enable
+blur disable 
+shadows disable 
 corner_radius 5
 
 smart_gaps off

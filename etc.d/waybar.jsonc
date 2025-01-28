@@ -2,11 +2,14 @@
   "layer": "bottom",
   "position": "top",
   "height": 30,
+  "width": 0,
   "spacing": 5,
-  "margin-top": 10,
+  "margin-top": 5,
+  "margin-right": 30,
+  "margin-left": 30,
   "modules-left": ["sway/workspaces", "wlr/taskbar","sway/mode"],
   "modules-center": ["sway/window"],
-  "modules-right": ["cpu", "memory", "clock"],
+  "modules-right": ["cpu", "memory", "clock", "tray", "volume"],
   "sway/workspaces": {
     "format": "{icon}",
     "format_unfocused": "",
@@ -52,7 +55,6 @@
   "wlr/taskbar": {
     "format": "{icon}",
     "icon-size": 16,
-    //"icon-theme": "Numix-Circle",
     "tooltip-format": "{title}",
     "on-click": "activate",
     "on-click-middle": "close"

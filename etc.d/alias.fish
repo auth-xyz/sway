@@ -51,6 +51,7 @@ alias gp="git push"
 alias gpl="git pull"
 alias gpr='git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD) && echo "Pull request created for branch $(git rev-parse --abbrev-ref HEAD)"'
 alias grh='git reset --hard'
+alias gd='git diff'
 alias lg='lazygit'
 
 # System logging aliases

@@ -14,3 +14,5 @@ if test -f $config_aliases
     source $config_aliases
 end
 
+
+fish_add_path /home/ep/.spicetify

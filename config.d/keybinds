@@ -1,4 +1,4 @@
-# Importing other parts of the config
+#Importing other parts of the config
 include ~/.config/sway/config.d/modes
 
 # Variables
@@ -44,6 +44,6 @@ bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 bindsym Shift+XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 
 # Brightness Control:
-bindsym F2 exec light -U 20
-bindsym F3 exec light -A 20
+#bindsym F2 exec light -U 20
+#bindsym F3 exec light -A 20
 bindsym F4 exec light -S 50
