@@ -49,8 +49,7 @@
 
 
 #clock {
-  font-weight: bold;
-  color: @yellow;
+  color: @fg1;
 }
 
 
