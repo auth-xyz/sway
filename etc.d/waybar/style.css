@@ -177,3 +177,18 @@
     background: @blue;
   }
 }
+
+
+
+/* Custom modules */
+
+#custom-launcher {
+    color: #83a598;  /* aqua color for the icon */
+    font-size: 16px;
+    transition: all 0.2s ease;
+}
+
+
+#custom-launcher:hover {
+    color: #fbf1c7;  /* fg4 - brighter on hover */
+}

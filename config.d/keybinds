@@ -29,7 +29,7 @@ bindsym $mod+q kill
 
 # Modes:
 bindsym $mod+r mode "resize"
-bindsym $mod+x mode "exit: lo[c]k, [e]xit, [r]eboot, [s]hutdown"
+bindsym $mod+x mode "exit: lo[c]k, [e]xit, [r]eboot, [s]hutdown, [u]pdate"
 
 
 # Media Control:
