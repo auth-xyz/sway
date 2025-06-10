@@ -41,8 +41,8 @@
   },
   
   "custom/launcher": {
-    "format": "  ",
-    "on-click": "$HOME/.config/sway/etc.d/waybar/launcher.sh",
+    "format": "",
+    "on-click": "flatpak run md.obsidian.Obsidian",
     "tooltip": false
   },
 

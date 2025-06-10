@@ -11,9 +11,9 @@ set -x WALLP "$HOME/.wallpapers"
 set -x CONFIG "$HOME/.config"
 
 # System aliases
-alias inst="sudo dnf install -y"
-alias update="sudo dnf update -y"
-alias remove="sudo dnf remove -y"
+alias inst="sudo pacman -S --noconfirm"
+alias update="sudo pacman -Syu --noconfirm"
+alias remove="sudo pacman -R"
 
 alias cd='z'
 alias ls="eza --icons --all"
@@ -29,10 +29,8 @@ alias vpnd="sudo protonvpn d"
 alias vpns="sudo protonvpn status"
 
 # Script aliases
-alias arduino_ide="_JAVA_AWT_WM_NONREPARENTING=1 flatpak run cc.arduino.arduinoide"
 alias fontinstall="cp $SCRIPTS/fontin.py ./ && python3 ./fontin.py && rm fontin.py"
 alias port_foward="$SCRIPTS/portfowarding.sh"
-alias aliases="bat $HOME/.zshalias"
 alias audio="/usr/bin/audio -c wp"
 alias icat="kitty +kitten icat"
 alias fasty="fastfetch"

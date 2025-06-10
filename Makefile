@@ -1,7 +1,7 @@
 PACKAGE_MANAGER := $(shell command -v apt-get || command -v dnf || command -v pacman || command -v yay)
 CONFIG_DIR := $(HOME)/.config
 HOME_DIR := $(HOME)
-PACKAGES := fuzzel sway fish kitty tmux fzf fd eza zoxide
+PACKAGES := fuzzel fish kitty tmux fzf fd eza zoxide nerd-fonts
 
 .PHONY: all install links check clean
 
@@ -17,7 +17,7 @@ install:
 	elif command -v dnf > /dev/null; then \
 		sudo dnf install -y $(PACKAGES); \
 	elif command -v pacman > /dev/null; then \
-		sudo pacman -Syu --noconfirm $(PACKAGES); \
+		sudo pacman -S --noconfirm $(PACKAGES); \
 	elif command -v yay > /dev/null; then \
 		yay -Syu --noconfirm $(PACKAGES); \
 	fi
@@ -26,14 +26,17 @@ links:
 	# Ensure target directories exist
 	mkdir -p $(CONFIG_DIR)/fish
 	mkdir -p $(CONFIG_DIR)/fuzzel
-	mkdir -p $(CONFIG_DIR)/i3status-rust
+	mkdir -p $(CONFIG_DIR)/waybar
 
 	# Create symbolic links
-	ln -sf $(CURDIR)/etc.d/fishcfg.fish $(CONFIG_DIR)/fish/config.fish
-	ln -sf $(CURDIR)/etc.d/alias.fish $(CONFIG_DIR)/fish/alias.fish
+	ln -sf $(CURDIR)/etc.d/shell/fishcfg.fish $(CONFIG_DIR)/fish/config.fish
+	ln -sf $(CURDIR)/etc.d/shell/alias.fish $(CONFIG_DIR)/fish/alias.fish
 	ln -sf $(CURDIR)/etc.d/fuzzel.ini $(CONFIG_DIR)/fuzzel/fuzzel.ini
-	ln -sf $(CURDIR)/etc.d/waybar.toml $(CONFIG_DIR)/i3status-rust/config.toml
-	ln -sf $(CURDIR)/etc.d/tmux.conf $(HOME_DIR)/.tmux.conf
+
+	ln -sf $(CURDIR)/etc.d/shell/tmux.conf $(HOME_DIR)/.tmux.conf
+	ln -sf $(CURDIR)/etc.d/waybar/launcher.sh $(CONFIG_DIR)/waybar/launcher.sh
+	ln -sf $(CURDIR)/etc.d/waybar/waybar.jsonc $(CONFIG_DIR)/waybar/config.jsonc
+	ln -sf $(CURDIR)/etc.d/waybar/style.css $(CONFIG_DIR)/waybar/style.css
 
 check:
 	# Check if packages are installed

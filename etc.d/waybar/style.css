@@ -1,5 +1,5 @@
 @define-color bg0 #282828;
-@define-color bg1 #3c3836;
+@define-color bg1 #060009;
 @define-color bg2 #504945;
 @define-color fg1 #ebdbb2;
 @define-color fg2 #d5c4a1;
@@ -22,7 +22,7 @@
   background: transparent;
   padding: 2px; 
   margin: 0; 
-  border-radius: 3; 
+  border-radius: 5px; 
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4);
 }
 
@@ -61,7 +61,7 @@
 
 #tray > .item {
   padding: 5px;
-  border-radius: 3px;
+  border-radius: 5px;
   transition: background 0.3s, color 0.3s;
 }
 
@@ -130,24 +130,22 @@
   padding: 2px 4px; 
   margin: 1px; 
   background: @bg1;
-  border-radius: 3px; 
+  border-radius: 7px; 
+  border-color: rgba(1, 1, 1, 1);
   font-size: 14px; 
 }
 
 .modules-left {
-  background: @bg0;
   opacity: 0.91;
-  border-radius: 5;
+  border-radius: 15px;
 }
 
 .modules-center {
-  background: @bg0;
   opacity: 0.91;
   border-radius: 5;
 }
 
 .modules-right {
-  background: @bg0;
   opacity: 0.91;
   border-radius: 5;
 }
@@ -183,7 +181,7 @@
 /* Custom modules */
 
 #custom-launcher {
-    color: #83a598;  /* aqua color for the icon */
+    color: #7470b6;  /* aqua color for the icon */
     font-size: 16px;
     transition: all 0.2s ease;
 }
